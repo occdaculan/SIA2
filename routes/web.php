@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsersController;
-
+use App\Http\Controllers\AboutController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,6 +25,9 @@ Route::get('/', [UsersController::class, 'home']);
 // })->name('contacts');
 
 Route::get('contacts', [UsersController::class, 'contactPage'])->name('contacts');
+
+Route::get('about-us', [AboutController::class, 'about'])->name('about');
+
 
 
 

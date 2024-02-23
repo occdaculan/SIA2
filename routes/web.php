@@ -28,7 +28,7 @@ Route::get('contacts', [UsersController::class, 'contactPage'])->name('contacts'
 
 Route::get('about-us', [AboutController::class, 'about'])->name('about');
 
-
+Route::get('save-blog', [AboutController::class, 'saveBlog']);
 
 
 

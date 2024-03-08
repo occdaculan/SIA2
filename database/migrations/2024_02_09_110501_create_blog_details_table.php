@@ -22,10 +22,10 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        for ($i=0; $i < 100; $i++) { 
+        for ($i=0; $i < 10; $i++) { 
             $blog = new Blogs();
             $blog->blog_name = $faker->sentence(3) . $i;
-            $blog->amount = 100;
+            $blog->amount = 10;
             $blog->description = 'This is a sample blog content. '. $i;
             $blog->save();
 

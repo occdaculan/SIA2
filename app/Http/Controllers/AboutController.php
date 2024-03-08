@@ -12,11 +12,11 @@ class AboutController extends Controller
 
     public function saveBlog(){
         $blog = new Blogs();
-        $blog->blog_name = 'test';
-        $blog->amount = 100;
-        $blog->description = 'This is a sample blog content. ';
+        $blog->blog_name = 'yeyrr';
+        $blog->amount = 300;
+        $blog->description = 'This is a sample blog content sample. ';
         $blog->save();
-        echo "Blog Saved";
+        var_dump($blog->id);
     }
 
     

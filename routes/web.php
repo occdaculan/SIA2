@@ -18,16 +18,16 @@ use App\Http\Controllers\AboutController;
 //     return view('welcome');
 // });
 
-Route::get('/', [UsersController::class, 'home']);
-
+Route::get('/', [UsersController::class, 'home'])->name('home');
+Route::get('/create-blog', [UsersController::class, 'createBlog']);
+Route::get('/blog', [UsersController::class, 'blog']);
+Route::post('/save-blog', [UsersController::class, 'saveBlog'])->name('save-blog');
 // Route::get('contacts', function () {
 //     return view('contact');
 // })->name('contacts');
 
 Route::get('contacts', [UsersController::class, 'contactPage'])->name('contacts');
-
 Route::get('about-us', [AboutController::class, 'about'])->name('about');
-
 Route::get('save-blog', [AboutController::class, 'saveBlog']);
 
 

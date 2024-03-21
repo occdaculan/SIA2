@@ -31,4 +31,7 @@ Route::get('about-us', [AboutController::class, 'about'])->name('about');
 Route::get('save-blog', [AboutController::class, 'saveBlog']);
 
 
+Route::get('/sample-query', [UsersController::class, 'sampleQuery']);
+
+
 

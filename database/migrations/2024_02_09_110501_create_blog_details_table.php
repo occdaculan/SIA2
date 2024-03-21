@@ -5,6 +5,8 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 use App\Models\Blogs;
 use App\Models\BlogDetails;
+use Illuminate\Support\Str;
+use App\Models\User;
 
 return new class extends Migration
 {
@@ -22,11 +24,20 @@ return new class extends Migration
             $table->timestamps();
         });
 
+        for ($i = 0; $i < 10; $i++) {
+            $user = new User();
+            $user->name =  $faker->name;
+            $user->email =  $faker->email;
+            $user->password = bcrypt(123456);
+            $user->save();
+        }
+
         for ($i=0; $i < 10; $i++) { 
             $blog = new Blogs();
             $blog->blog_name = $faker->sentence(3) . $i;
             $blog->amount = 10;
             $blog->description = 'This is a sample blog content. '. $i;
+            $blog->user_id = 1;
             $blog->save();
 
             for ($i2=0; $i2 < 2; $i2++) { 

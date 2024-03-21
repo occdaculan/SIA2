@@ -12,12 +12,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        $faker = Faker\Factory::create();
+      
         Schema::create('blogs', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id');
             $table->string('blog_name', 100);
             $table->double('amount');
             $table->longText('description'); 	
+            $table->enum('isEnable',['yes','no'])->default('yes');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
         // for ($i=0; $i < 10; $i++) { 
